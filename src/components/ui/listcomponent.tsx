@@ -1,12 +1,12 @@
 import React from 'react';
 
 // Define the type for the props
-interface List2Props {
+interface ListComponentProps {
     items: string[]; // The items prop should be an array of strings
 }
 
 
-const List2: React.FC<List2Props> = ({ items }) => {
+const ListComponent: React.FC<ListComponentProps> = ({ items }) => {
     return (
         <div className="p-4 bg-blue-100 shadow-lg rounded-2xl w-64">
             <h2 className="text-xl font-bold mb-3">Best Surafces to Run on</h2>
@@ -24,4 +24,5 @@ const List2: React.FC<List2Props> = ({ items }) => {
     );
 };
 
-export default List2;
+export default ListComponent;
+
