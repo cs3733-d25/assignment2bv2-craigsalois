@@ -1,11 +1,18 @@
 import {Button} from "@/components/ui/button.tsx";
-
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card";
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import {Textarea} from "@/components/ui/textarea";
+import {Slider} from "@/components/ui/slider";
+
+import {Formtable} from "@/components/ui/formtable.tsx";
+import {Separator} from "@radix-ui/react-separator";
+
 
 export function Form1(){
     return (
-        <form>
-            <Card>
+        <form onSubmit={(e)=>{e.preventDefault();}}>
+            <Card className="max-w-md mx-auto">
                 <CardHeader>
                     <CardTitle>
                         Shoe Recommendations
@@ -15,45 +22,29 @@ export function Form1(){
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <label htmlFor="ShoeName">Enter Shoe Name</label>
-                    <input type="text" id="ShoeName"/>
+                    <Label htmlFor="ShoeName">Enter Shoe Name</Label>
+                    <Input type="text" id="ShoeName" placeholder="Your shoe rec" />
                     <br/>
-                    <label htmlFor="Price">Enter Price</label>
-                    <input type="text" id="Price"/>
+                    <Label htmlFor="Price">Enter Price</Label>
+                    <Input type="text" placeholder="$$$" id="Price"/>
                     <br/>
-                    Strength Point
-                    <br/>
-                    <table className="formtable">
-                        <tbody>
-                        <tr>
-                            <th><label htmlFor="Technique">Technique</label></th>
-                            <th><input type="checkbox" id="technique"/></th>
-                        </tr>
-                        <tr>
-                            <th><label htmlFor="Quality">Quality</label></th>
-                            <th><input type="checkbox" id="quality"/></th>
-                        </tr>
-                        <tr>
-                            <th><label htmlFor="Style">Style</label></th>
-                            <th><input type="checkbox" id="style"/></th>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <label htmlFor="Comment">Additional Rec Comments</label> <br/>
-                    <textarea id="Comment"></textarea>
-                    <br/>
-                    <label htmlFor="Rec Level">Recommendation Level</label>
-                    <select id="Rec Level">
-                        <option value="1">Weak</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Strong</option>
-                    </select>
+                    <Formtable></Formtable>
                     <br/>
                     <br/>
-                    <Button>submit</Button>
+                    <Label className="flex justify-center">Additional Rec Comments</Label> <br/>
+                    <Textarea id="Comment"></Textarea>
                     <br/>
+                    <Label className="flex justify-center">Recommendation Level</Label>
+                    <br/>
+                    <Slider defaultValue={[50]} max={100} step={1}> </Slider>
+                    <br/>
+                    <br/>
+                    <Separator className="bg-gray-300 h-px mt-5" />
                 </CardContent>
-
+                <CardFooter className="flex justify-between">
+                    <Label>Thank you for your input</Label>
+                    <Button>submit</Button>
+                </CardFooter>
             </Card>
 
         </form>
