@@ -10,6 +10,7 @@ import {
     TableCaption2,
 } from "@/components/ui/table2.tsx"
 import {RunningForm} from "@/components/ui/form2.tsx"
+import {Label} from "@radix-ui/react-label";
 
 
 export function Hobby2(){
@@ -17,7 +18,20 @@ export function Hobby2(){
     const listItems = ["Dirt Path", "Grass","Asphalt","Concrete","Sand"];
 
     return(
+
+
         <>
+
+            <Label className="text-4xl font-semibold">Craig's Hobby Stuff</Label>
+            <br/>
+            <br/>
+
+            <div className="flex justify-center items-center">
+                <img src="/src/assets/runningpic.jpg"/>
+            </div>
+
+
+            <br/>
             <div className="flex justify-center items-center">
                 {/* Centering the List2 component */}
                 <List2 items={listItems} />

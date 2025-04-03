@@ -10,8 +10,9 @@ function App() {
 
   return (
       <div>
-          <Title />
-          <Intro name1 = "Craig" name2 = "Kaito" />
+
+          <Title/>
+          <Intro name1="Craig" name2="Kaito"/>
           <Hobby1/>
           <br/>
           <Hobby2/>
